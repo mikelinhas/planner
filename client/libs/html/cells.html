@@ -1,0 +1,39 @@
+<div>
+  <table class="table table-bordered table-fixed weekview-header">
+    <thead>
+      <tr>
+        <th class="calendar-hour-column"> 
+          <span>Fecha</span>   
+        </th>
+        <th ng-repeat="worker in workers" 
+            class="text-center weekview-header-label">
+              <span>{{worker.name}}</span>
+        </th>
+        <th style="width:17px"></th>
+      </tr>
+    </thead>
+  </table>
+  <div class="scrollable">
+    <table class="table table-bordered table-fixed">
+      <tbody>
+        <tr ng-repeat="row in rows">
+          <td class="calendar-hour-column text-center">
+              {{row | date: "dd.MM"}}
+          </td>
+          <td ng-repeat="worker in workers" class="calendar-cell" 
+              ng-class="{true:'weekend', false:''}[row.getDay()==6 || row.getDay()==0]">    
+                <div ng-repeat="event in worker.events" 
+                     class="calendar-event-wrap" 
+                     ng-click="showEvent(worker.name,event)" 
+                     style="height: {{event.duration*103}}%; padding: 0px" 
+                     ng-if="event.start.getDate()===row.getDate() && event.start.getMonth()===row.getMonth()">
+                        <span style="color:white">
+                          {{event.name}}
+                        </span> 
+                </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

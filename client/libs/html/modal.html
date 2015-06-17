@@ -1,0 +1,72 @@
+
+<h1 style="margin:10px" ng-show="step==1">Select Worker</h1>
+<h1 style="margin:10px" ng-show="step==2">Select Project & Dates</h1>
+
+<div class="panel-body" style="margin:10px" ng-show="step == 1">
+  <div class="row">
+    <div class="col-sm-6">
+      <ul>
+        <strong> Search : </strong>
+        <input type="text" ng-model="query" class="form-control">
+      </ul>
+    </div>
+
+    <table class="table table-striped table-hover table-bordered">
+      <thead style="background-color: rgb(182, 180, 180)">
+        <th> Username </th>
+        <th> Name </th>
+        <th> Acronym </th>
+      </thead>
+
+      <tr ng-repeat="worker in workers | filter: query | limitTo: 10" 
+              ng-click="selectworker(worker)">
+          <td>{{worker._id.worker_id}}</td>
+          <td>{{worker._id.name}}</td>
+        <td class="hidden-xs">{{worker._id.acronym}}</td>
+      </tr>
+    </table>
+  </div>
+
+  <div>
+    <br>
+    <button class="btn btn-success pull-right" ng-show="selected" ng-click="next()">Next</button>
+    <button class="btn btn-warning pull-right" ng-click="cancel()">Cancel</button>
+  </div>
+
+</div>
+
+<div class="panel-body" style="margin:10px" ng-show="step == 2">
+  <div class="row">
+    <div class="col-sm-4">
+      <h4> Start Date </h4>
+      <input type="date" ng-model="event.start" class="form-control">
+      <br>
+      <div>
+        <h4> 
+          End Date 
+        </h4>
+        <input type="date" ng-model="event.end" class="form-control">
+      </div>
+      <br>
+      <h4> Project </h4>
+      <input type="text" ng-model="event.project" class="form-control">
+      <br>
+      <button class="btn btn-info pull-right" ng-click="temp_push(worker,event)">Check</button>
+    </div>
+    <div class="pull-right">
+        <div id="grid2" ui-grid="gridOptions2" class="myGrid2"></div>
+    </div>
+
+  </div>
+  
+  <br><br>
+
+  <div>
+    <br>
+    <button class="btn btn-success pull-right" ng-show="selected2" ng-click="next()">Next</button>
+    <button class="btn btn-warning pull-right" ng-click="cancel()">Cancel</button>
+    <button class="btn btn-info pull-right" ng-click="back()">Back</button>
+
+  </div>
+
+</div>

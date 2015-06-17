@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title> BSS | teams! </title>
+
+    <!-- ICON -->
+    <link href="/drop.ico" rel="icon" type="image/x-icon" />
+
+
+    <!-- CSS  -->
+    <link rel="stylesheet" href="/libs/css/bootstrap.min.css"/>
+
+    
+    <!-- Page Specific CSS -->
+    <link rel="stylesheet" href="/libs/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/css/style.css"/>
+    <link rel="stylesheet" href="/libs/css/ui-grid.css"/>    
+
+    <!-- JavaScripts -->
+    <script rel="javascript" src="/libs/js/jquery.min.js"></script>
+    <script rel="javascript" src="/libs/js/bootstrap.min.js"></script>
+    <script rel="javascript" src="/libs/js/angular.min.js"></script>
+    <script rel="javascript" src="/libs/js/ui-bootstrap-tpls-0.11.2.js"></script>
+    <script rel="javascript" src="/libs/js/ui-grid-unstable.js"></script>
+    
+    <!--
+    <script rel="javascript" src="/libs/js/ui-grid-stable.js"></script>
+    -->
+
+    <!-- Page Specific JS -->
+    <script rel="javascript" src="/libs/js/app.js"></script>
+
+
+  </head>
+
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <i class="fa fa-yelp fa-lg"></i>
+          </button>
+          <a class="navbar-brand" href="">BSS</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="/settings"> Settings 
+                <i class="fa fa-wrench fa-lg" style="margin-left:2px"> </i>
+              </a>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+
+      </div>
+    </div>
+    <div class="container" ng-controller="MainCtrl">
+      <div class="panel panel-default" ng-show="active" style="margin-top:20px">
+        <!-- Default panel contents -->
+        <div class="panel-heading">
+          Settings
+        </div>
+        <div class="panel-body">
+          <p>hallu</p>
+        </div>
+      </div>
+      <div class="well well-sm" style="margin-top:20px">
+        <div>
+          <div class="row calendar-navbar" style="margin-bottom: 5px">
+            <div class="calendar-header col-xs-12">
+              <button type="button" class="btn btn-default pull-left" 
+                      ng-click="active=!active"
+                      style="margin-right:4px">
+                        <i class="fa fa-child fa-lg"></i>
+              </button> 
+              <button type="button" class="btn btn-default pull-left" 
+                      ng-click="add(workers)"
+                      style="margin-right:4px">
+                        <i class="fa fa-plus"></i>
+              </button>
+              <button type="button" class="btn btn-default pull-left" 
+                       ng-click="showmeInfo(workers)">
+                        <i class="fa fa-truck"></i>
+              </button>
+            </div>
+          </div>
+          <div ng-controller="MainCtrl">
+            <div id="grid1" ui-grid="gridOptions" class="myGrid" ui-grid-pinning></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+

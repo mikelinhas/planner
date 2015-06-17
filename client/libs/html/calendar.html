@@ -1,0 +1,45 @@
+<div class="panel panel-default" ng-show="active">
+  <!-- Default panel contents -->
+  <div class="panel-heading">
+    Settings
+  </div>
+  <div class="panel-body">
+    <p>hallu</p>
+  </div>
+</div>
+
+<div class="alert alert-success" 
+  ng-show="event.show">
+    Worker: {{event.worker}} - {{event.name}}: From {{event.start|date:'MMM/dd,yyyy,HH:mm'}}
+</div>
+<div class="well well-sm">
+  <div>
+    <div class="row calendar-navbar">
+      <div class="calendar-header col-xs-12">
+        <button type="button" class="btn btn-default pull-left" 
+                 ng-click="add()">
+                  <i class="fa fa-plus"></i>
+        </button>
+        <ul class="pagination pull-right"> 
+          <li>   
+            <a href="#" aria-label="Previous">  
+              <span aria-hidden="true">&laquo;</span>  
+            </a>  
+          </li>  
+          <li><a href="#">1</a></li>  
+          <li><a href="#">2</a></li>  
+          <li><a href="#">3</a></li>  
+          <li><a href="#">4</a></li>  
+          <li><a href="#">5</a></li>  
+          <li>  
+            <a href="#" aria-label="Next">  
+              <span aria-hidden="true">&raquo;</span>  
+            </a>  
+          </li> 
+        </ul>
+      </div>
+    </div>
+    <div ng-include src="'libs/html/cells.html'"></div>
+
+  </div>
+</div>
