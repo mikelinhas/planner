@@ -5,7 +5,9 @@ var Server = mongo.Server;
 var Db     = mongo.Db;
 var BSON   = mongo.BSONPure;
 var MongoClient = mongo.MongoClient;
-var MONGOHQ_URL= 'mongodb://localhost:27017/plannerdb';
+// var MONGOHQ_URL= 'mongodb://localhost:27017/plannerdb';
+var MONGOHQ_URL= 'mongodb://mike:whatsyouproblem@ds011419.mlab.com:11419/heroku_057nwfj0'
+
 var db;
 
 // Init
